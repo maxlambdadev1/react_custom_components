@@ -31,18 +31,11 @@ const TrashButtonAnimation = () => {
     useEffect(()=>{
         if(keyArr[0].toLowerCase() === "c") setKeyStatus("keyC");
        if(keyArr[1] === "5" && keyArr[0] === "4") setKeyStatus("key54");
-       if(keyArr[2].toLowerCase() === "s" && keyArr[1].toLowerCase() === "b" && keyArr[0].toLowerCase() === "f") setKeyStatus("keySBF");
+    //    if(keyArr[2].toLowerCase() === "s" && keyArr[1].toLowerCase() === "b" && keyArr[0].toLowerCase() === "f") setKeyStatus("keySBF");
     }, [keyArr]);
 
-    useEffect(()=>{
-        if (keyStatus === "keyC") {       
-        } else if (keyStatus === 'key54') {
-        }else if (keyStatus === 'keySBF') {
-        }
-    }, [keyStatus]);
-
     return (
-        <button className={classNames(styles.button, isActive? styles.delete : '' )}
+        <button className={classNames(styles.button, styles[keyStatus], isActive? styles.delete : '' )}
             onClick={handleAction}
         >
             <div className={styles.trash}>

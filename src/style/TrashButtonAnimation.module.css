@@ -26,6 +26,30 @@
     transform: scale(var(--scale, 1));
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
+.button.keyC {    
+    --background: #00aa00;
+    --background-hover : #00ff00;
+    --text: #fff;
+    --shadow: rgba(0, 9, 61, .2);
+    --paper: #5C86FF;
+    --paper-lines: #fff;
+    --trash: #aa0000;
+    --trash-lines: #aa0000;
+    --check: #fff;
+    --check-background: #5C86FF;
+}
+.button.key54 {    
+    --background: rgb(96 165 250);
+    --background-hover : rgb(37 99 235);
+    --text: #fff;
+    --shadow: rgba(0, 9, 61, .2);
+    --paper: #00ff00;
+    --paper-lines: #fff;
+    --trash: #aa0000;
+    --trash-lines: #aa0000;
+    --check: #fff;
+    --check-background: #00aa00;
+}
 
 .button span {
     display: block;
