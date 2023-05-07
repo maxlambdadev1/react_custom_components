@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from "../style/TrashButtonAnimation.module.css";
+import styles from "../style/GridListToggle.module.css";
 import classNames from "classnames";
 
-const TrashButtonAnimation = () => {
+const GridListToggle = ({ gridTitle, listTitle }) => {
     const [isActive, setIsActive] = useState(false);
-
-    const handleAction = () => {
-        setIsActive(true);
-        setTimeout(() => {
-            setIsActive(false);
-        }, 3200)
+    const toggle = () => {
+        setIsActive(!isActive);
     }
-
+    
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
     const [keyStatus, setKeyStatus] = useState("");
@@ -35,23 +31,25 @@ const TrashButtonAnimation = () => {
     }, [keyArr]);
 
     return (
-        <button className={classNames(styles.button, styles[keyStatus], isActive ? styles.delete : '')}
-            onClick={handleAction}
+        <button className={classNames(styles["grid-list"] ,styles[keyStatus], (gridTitle || listTitle) ? "" : styles["without-text"], styles["animation"], isActive? styles["active"]:"" )}
+            onClick={toggle}
         >
-            <div className={styles.trash}>
-                <div className={styles.top}>
-                    <div className={styles.paper}></div>
+            <div className={styles["icon"]}>
+                <div className={styles["dots"]}>
+                    <i></i><i></i><i></i><i></i>
                 </div>
-                <div className={styles.box}></div>
-                <div className={styles.check}>
-                    <svg viewBox="0 0 8 6">
-                        <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
-                    </svg>
+                <div className={styles["lines"]}>
+                    <i></i><i></i><i></i><i></i>
                 </div>
             </div>
-            <span>Delete Item</span>
+            {(gridTitle || listTitle) ? (
+                <div className={styles["text"]}>
+                    <span>{ gridTitle }</span>
+                    <span>{ listTitle }</span>
+                </div>) : null
+            }
         </button>
     )
 }
 
-export default TrashButtonAnimation;
+export default GridListToggle;
