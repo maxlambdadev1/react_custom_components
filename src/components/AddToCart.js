@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from "../style/InputGroupFocusWithin.module.css";
+import styles from "../style/AddToCart.module.css";
 import classNames from "classnames";
 
-const InputGroupFocusWithin = (props) => {
-    const direction = props.direction == true ? true : false;
-    const title = props.title;
-    const placeholder = props.placeholder;
+const AddToCart = () => {
+    const [isAdded, setIsAdded] = useState(false);
+    const toggleCheck = () => {
+        console.log('isAdded', isAdded)
+        setIsAdded(!isAdded);
+    }
 
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
@@ -31,20 +33,20 @@ const InputGroupFocusWithin = (props) => {
     }, [keyArr]);
 
     return (
-        <div className={classNames(styles["form-group"], styles[keyStatus])}>
-            {direction ? (
-                <>
-                    <span>{title}</span>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                </>
-            ) : (
-                <>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                    <span>{title}</span>
-                </>
-            )}
-        </div>
+        <button className={classNames(styles["add-to-cart"], styles[keyStatus], isAdded ? styles['added'] : '')}
+            onClick={toggleCheck}
+        >
+            <div className={styles["default"]}>Add to cart</div>
+            <div className={styles["success"]}>Added</div>
+            <div className={styles["cart"]}>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div className={styles["dots"]}></div>
+        </button>
     )
 }
 
-export default InputGroupFocusWithin;
+export default AddToCart;

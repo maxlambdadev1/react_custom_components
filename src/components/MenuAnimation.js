@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from "../style/InputGroupFocusWithin.module.css";
+import styles from "../style/MenuAnimation.module.css";
 import classNames from "classnames";
 
-const InputGroupFocusWithin = (props) => {
-    const direction = props.direction == true ? true : false;
-    const title = props.title;
-    const placeholder = props.placeholder;
+const MenuAnimation = () => {
+    const [isActive, setIsActive] = useState(false);
+    const handleClick = () => {
+        console.log('isActive', isActive)
+        setIsActive(!isActive);
+    }
 
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
@@ -31,20 +33,16 @@ const InputGroupFocusWithin = (props) => {
     }, [keyArr]);
 
     return (
-        <div className={classNames(styles["form-group"], styles[keyStatus])}>
-            {direction ? (
-                <>
-                    <span>{title}</span>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                </>
-            ) : (
-                <>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                    <span>{title}</span>
-                </>
-            )}
-        </div>
+        <button className={classNames(styles["menu"], isActive? styles['active'] : '', styles[keyStatus])}
+            onClick={handleClick}
+        >
+            <svg viewBox="0 0 64 48">
+                <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+                <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+                <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+            </svg>
+        </button>
     )
 }
 
-export default InputGroupFocusWithin;
+export default MenuAnimation;

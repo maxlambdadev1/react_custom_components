@@ -7,7 +7,7 @@ const GridListToggle = ({ gridTitle, listTitle }) => {
     const toggle = () => {
         setIsActive(!isActive);
     }
-    
+
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
     const [keyStatus, setKeyStatus] = useState("");
@@ -25,13 +25,14 @@ const GridListToggle = ({ gridTitle, listTitle }) => {
     }, [key]);
 
     useEffect(() => {
-        if (keyArr[0].toLowerCase() === "c") setKeyStatus("keyC");
+        if (keyArr[0].toLowerCase() === " ") setKeyStatus("");
+        if (keyArr[0].toLowerCase() === "c") setKeyStatus('keyC');
         if (keyArr[1] === "5" && keyArr[0] === "4") setKeyStatus("key54");
         //    if(keyArr[2].toLowerCase() === "s" && keyArr[1].toLowerCase() === "b" && keyArr[0].toLowerCase() === "f") setKeyStatus("keySBF");
     }, [keyArr]);
 
     return (
-        <button className={classNames(styles["grid-list"] ,styles[keyStatus], (gridTitle || listTitle) ? "" : styles["without-text"], styles["animation"], isActive? styles["active"]:"" )}
+        <button className={classNames(styles["grid-list"], styles[keyStatus], (gridTitle || listTitle) ? "" : styles["without-text"], styles["animation"], isActive ? styles["active"] : "")}
             onClick={toggle}
         >
             <div className={styles["icon"]}>
@@ -44,8 +45,8 @@ const GridListToggle = ({ gridTitle, listTitle }) => {
             </div>
             {(gridTitle || listTitle) ? (
                 <div className={styles["text"]}>
-                    <span>{ gridTitle }</span>
-                    <span>{ listTitle }</span>
+                    <span>{gridTitle}</span>
+                    <span>{listTitle}</span>
                 </div>) : null
             }
         </button>

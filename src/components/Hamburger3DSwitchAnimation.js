@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import styles from "../style/InputGroupFocusWithin.module.css";
+import styles from "../style/Hamburger3DSwitchAnimation.module.css";
 import classNames from "classnames";
 
-const InputGroupFocusWithin = (props) => {
-    const direction = props.direction == true ? true : false;
-    const title = props.title;
-    const placeholder = props.placeholder;
+const Hamburger3DSwitchAnimation = () => {
+    const [isChecked, setIsChecked] = useState(false);
+    const toggleCheck = () => {
+        console.log('checked', isChecked)
+        setIsChecked(!isChecked);
+    }
 
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
@@ -31,20 +33,14 @@ const InputGroupFocusWithin = (props) => {
     }, [keyArr]);
 
     return (
-        <div className={classNames(styles["form-group"], styles[keyStatus])}>
-            {direction ? (
-                <>
-                    <span>{title}</span>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                </>
-            ) : (
-                <>
-                    <input className={styles["form-field"]} type="text" placeholder={placeholder} />
-                    <span>{title}</span>
-                </>
-            )}
-        </div>
+        <label className={classNames(styles["menu"], styles[keyStatus])}>
+            <input type="checkbox" checked={isChecked ? true : false} onChange={toggleCheck} />
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </label>
     )
 }
 
-export default InputGroupFocusWithin;
+export default Hamburger3DSwitchAnimation;

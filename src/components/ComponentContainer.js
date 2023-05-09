@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const ComponentContainer = ( props ) => {
     return (
-        <div className='rounded-lg border-2 border-sky-400'>
+        <div className='rounded-lg border-2 border-sky-400 overflow-hidden'>
             <div className='text-center font-bold py-3'>
                 { props.title }
             </div>
