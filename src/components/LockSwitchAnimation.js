@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import styles from "../style/AddToCart.module.css";
+import styles from "../style/LockSwitchAnimation.module.css";
 import classNames from "classnames";
 
-const AddToCart = () => {
-    const [isAdded, setIsAdded] = useState(false);
+const LockSwitchAnimation = () => {
+    const [isChecked, setIsChecked] = useState(false);
     const toggleCheck = () => {
-        console.log('isAdded', isAdded)
-        setIsAdded(!isAdded);
+        console.log('checked', isChecked)
+        setIsChecked(!isChecked);
     }
 
     const [key, setKey] = useState("");
@@ -33,20 +33,14 @@ const AddToCart = () => {
     }, [keyArr]);
 
     return (
-        <button className={classNames(styles["add-to-cart"], styles[keyStatus], isAdded ? styles['added'] : '')}
-            onClick={toggleCheck}
-        >
-            <div className={styles["default"]}>Add to cart</div>
-            <div className={styles["success"]}>Added</div>
-            <div className={styles["cart"]}>
-                <div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-            <div className={styles["dots"]}></div>
-        </button>
+        <label className={classNames(styles["switch"], styles[keyStatus])}>
+            <input type="checkbox" checked={isChecked? true : false} onChange={toggleCheck}/>
+            <span>
+                <em></em>
+                <strong></strong>
+            </span>
+        </label>
     )
 }
 
-export default AddToCart;
+export default LockSwitchAnimation;

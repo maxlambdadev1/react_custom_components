@@ -9,10 +9,26 @@ import AddToCart from "../components/AddToCart";
 import LoadingBoxes3D from "../components/LoadingBoxes3D";
 import Hamburger3DSwitchAnimation from "../components/Hamburger3DSwitchAnimation";
 import MenuAnimation from "../components/MenuAnimation";
+import RadioInput from "../components/RadioInput";
+import DayNightSwitch from "../components/DayNightSwitch";
+import LockSwitchAnimation from "../components/LockSwitchAnimation";
+import OrderConfirmAnimation from "../components/OrderConfirmAnimation";
 
 const Page1 = () => {
   return (
     <div className='max-w-screen-xl mx-auto grid grid-cols-4 gap-3 p-4'>
+      <ComponentContainer title='RadioInput' bgColor=''>
+        <RadioInput />
+      </ComponentContainer>
+      <ComponentContainer title='DayNightSwitch (keyCode-A,B,F)' bgColor=''>
+        <DayNightSwitch />
+      </ComponentContainer>
+      <ComponentContainer title='LockSwitchAnimation' bgColor=''>
+        <LockSwitchAnimation /> 
+      </ComponentContainer>
+      <ComponentContainer title='OrderConfirmAnimation' bgColor='#121621'>
+        <OrderConfirmAnimation />
+      </ComponentContainer>
       <ComponentContainer title='CSSHeartSwitch' bgColor=''>
         <CSSHeartSwitch />
       </ComponentContainer>
@@ -30,10 +46,6 @@ const Page1 = () => {
       </ComponentContainer>
       <ComponentContainer title='MenuAnimation' bgColor='#275EFE'>
         <MenuAnimation />
-      </ComponentContainer>
-      <ComponentContainer title='' bgColor=''>
-      </ComponentContainer>
-      <ComponentContainer title='' bgColor=''>
       </ComponentContainer>
       <ComponentContainer title='TrashButtonAnimation' bgColor=''>
         <TrashButtonAnimation />

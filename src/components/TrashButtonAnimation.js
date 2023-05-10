@@ -29,7 +29,7 @@ const TrashButtonAnimation = () => {
     }, [key]);
 
     useEffect(() => {
-        if (keyArr[0].toLowerCase() === " ") setKeyStatus("");
+        if (keyArr[0].toLowerCase() === "f") setKeyStatus("");
         if (keyArr[0].toLowerCase() === "c") setKeyStatus('keyC');
         if (keyArr[1] === "5" && keyArr[0] === "4") setKeyStatus("key54");
         //    if(keyArr[2].toLowerCase() === "s" && keyArr[1].toLowerCase() === "b" && keyArr[0].toLowerCase() === "f") setKeyStatus("keySBF");
