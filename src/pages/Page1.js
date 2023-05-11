@@ -13,10 +13,39 @@ import RadioInput from "../components/RadioInput";
 import DayNightSwitch from "../components/DayNightSwitch";
 import LockSwitchAnimation from "../components/LockSwitchAnimation";
 import OrderConfirmAnimation from "../components/OrderConfirmAnimation";
+import RunningManButton from "../components/RunningManButton";
+import RunningMan from "../components/RunningMan";
+import IOS15Button from "../components/IOS15Button";
+import CSSEggSwitch from "../components/CSSEggSwitch";
+import Check from "../components/Check";
+import PlusMinusToggle from "../components/PlusMinusToggle";
+
 
 const Page1 = () => {
   return (
     <div className='max-w-screen-xl mx-auto grid grid-cols-4 gap-3 p-4'>
+      <ComponentContainer title='PlusMinusToggle' bgColor=''>
+        <PlusMinusToggle />
+      </ComponentContainer>
+      <ComponentContainer title='RunningManButton' bgColor=''>
+        <RunningManButton />
+      </ComponentContainer>
+      <ComponentContainer title='RunningMan' bgColor=''>
+        <RunningMan />
+      </ComponentContainer>
+      <ComponentContainer title='IOS15Button' bgColor='#1B1E4F'>
+        <IOS15Button />
+      </ComponentContainer>
+      <ComponentContainer title='Check' bgColor=''>
+        <Check />
+      </ComponentContainer>
+      <ComponentContainer title='CSSEggSwitch' bgColor='#2B3044'>
+        <CSSEggSwitch />
+      </ComponentContainer>
+      <ComponentContainer title='' bgColor=''>
+      </ComponentContainer>
+      <ComponentContainer title='' bgColor=''>
+      </ComponentContainer>
       <ComponentContainer title='RadioInput' bgColor=''>
         <RadioInput />
       </ComponentContainer>
@@ -24,7 +53,7 @@ const Page1 = () => {
         <DayNightSwitch />
       </ComponentContainer>
       <ComponentContainer title='LockSwitchAnimation' bgColor=''>
-        <LockSwitchAnimation /> 
+        <LockSwitchAnimation />
       </ComponentContainer>
       <ComponentContainer title='OrderConfirmAnimation' bgColor='#121621'>
         <OrderConfirmAnimation />
