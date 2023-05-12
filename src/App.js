@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Page1 from "./pages/Page1.js";
+import Page2 from "./pages/Page2.js";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" >
+                  <Link to="/page2" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" >
                     Page2
                   </Link>
                 </li>
@@ -34,6 +35,7 @@ function App() {
         </nav>
         <Routes>
           <Route exact path='/' element={<Page1 />} />
+          <Route exact path='/page2' element={<Page2 />} />
         </Routes>
       </div>
     </Router>

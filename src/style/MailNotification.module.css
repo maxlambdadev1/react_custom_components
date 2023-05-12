@@ -1,0 +1,231 @@
+.email-notification {
+    --border: #2B3044;
+    --bell-default: #646B8C;
+    --bell-active: #275EFE;
+    box-shadow: inset 4px -4px 0 0 var(--border);
+    position: relative;
+    display: table;
+    cursor: pointer;
+    transition: transform 0.15s;
+    transform: scale(var(--scale, 1)) translateZ(0);
+}
+.email-notification.keyC {
+    --border: #be4aef;
+    --bell-default: #646B8C;
+    --bell-active: #fe2727;
+}
+.email-notification.key54 {
+    --border: #ada3a3;
+    --bell-default: #edd7b0;
+    --bell-active: #e44a17;
+    box-shadow: inset 3px -3px 0 0 var(--border);
+}
+
+
+.email-notification:active {
+    --scale: .96;
+}
+
+.email-notification:before,
+.email-notification:after {
+    content: "";
+    position: absolute;
+    background: var(--border);
+    display: block;
+}
+
+.email-notification:before {
+    border-radius: 0 0 3px 0;
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 38px;
+}
+
+.email-notification:after {
+    border-radius: 3px 0 0 0;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 24px;
+}
+
+.email-notification input {
+    display: none;
+}
+
+.email-notification input:checked+svg {
+    --svg-animation: tick;
+}
+
+.email-notification input:checked+svg+.bell {
+    --bell-animation: bell;
+    --bell-bottom-animation: bell-bottom;
+    --bell-bottom-duration: 0s;
+    --bell-bottom-delay: 1.3s;
+    --bell-bottom-s: .9;
+    --bell-top-y: 0px;
+    --bell-top-delay: .1s;
+    --bell-color: var(--bell-active);
+}
+
+.email-notification svg {
+    display: block;
+    width: 64px;
+    height: 41px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4px;
+    stroke-dasharray: 60px;
+    stroke-dashoffset: 136px;
+    stroke: var(--border);
+    -webkit-animation: var(--svg-animation, none) 0.3s linear;
+    animation: var(--svg-animation, none) 0.3s linear;
+}
+
+.email-notification .bell {
+    position: absolute;
+    right: 2px;
+    top: 6px;
+    height: 4px;
+    width: 20px;
+    border-radius: 2px;
+    background: var(--bell-color, var(--bell-default));
+    -webkit-animation: var(--bell-animation, none) 1.2s linear 0.1s;
+    animation: var(--bell-animation, none) 1.2s linear 0.1s;
+    transition: background 0.25s;
+}
+
+.email-notification .bell:before,
+.email-notification .bell:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.email-notification .bell:before {
+    left: 2px;
+    bottom: 0;
+    width: 16px;
+    height: 19px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: inset 0 0 0 4px var(--bell-color, var(--bell-default));
+    -webkit-clip-path: polygon(0 0, 16px 0, 16px calc(19px - var(--bell-top-y, 19px)), 0 calc(19px - var(--bell-top-y, 19px)));
+    clip-path: polygon(0 0, 16px 0, 16px calc(19px - var(--bell-top-y, 19px)), 0 calc(19px - var(--bell-top-y, 19px)));
+    transform: translateY(var(--bell-top-y, 19px));
+    transition: transform 0.1s linear var(--bell-top-delay, 0s), box-shadow 0.25s, -webkit-clip-path 0.1s linear var(--bell-top-delay, 0s);
+    transition: transform 0.1s linear var(--bell-top-delay, 0s), clip-path 0.1s linear var(--bell-top-delay, 0s), box-shadow 0.25s;
+    transition: transform 0.1s linear var(--bell-top-delay, 0s), clip-path 0.1s linear var(--bell-top-delay, 0s), box-shadow 0.25s, -webkit-clip-path 0.1s linear var(--bell-top-delay, 0s);
+}
+
+.email-notification .bell:after {
+    bottom: -7px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bell-color, var(--bell-default));
+    transform: scale(var(--bell-bottom-s, 0));
+    transition: transform var(--bell-bottom-duration, 0.2s) ease var(--bell-bottom-delay, 0s), background 0.25s;
+    -webkit-animation: var(--bell-bottom-animation, none) 1.2s linear 0.2s;
+    animation: var(--bell-bottom-animation, none) 1.2s linear 0.2s;
+}
+
+@-webkit-keyframes tick {
+    25% {
+        stroke-dashoffset: 144px;
+    }
+
+    50% {
+        stroke-dashoffset: 120px;
+    }
+
+    100% {
+        stroke-dashoffset: 136px;
+    }
+}
+
+@keyframes tick {
+    25% {
+        stroke-dashoffset: 144px;
+    }
+
+    50% {
+        stroke-dashoffset: 120px;
+    }
+
+    100% {
+        stroke-dashoffset: 136px;
+    }
+}
+
+@-webkit-keyframes bell {
+
+    8%,
+    92% {
+        transform: translate(6px, -8px) rotate(45deg);
+    }
+}
+
+@keyframes bell {
+
+    8%,
+    92% {
+        transform: translate(6px, -8px) rotate(45deg);
+    }
+}
+
+@-webkit-keyframes bell-bottom {
+
+    8%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    14%,
+    26%,
+    38%,
+    50%,
+    62%,
+    74%,
+    86% {
+        transform: translateX(2px) scale(0.9);
+    }
+
+    20%,
+    32%,
+    44%,
+    56%,
+    68%,
+    80% {
+        transform: translateX(-2px) scale(0.9);
+    }
+}
+
+@keyframes bell-bottom {
+
+    8%,
+    100% {
+        transform: scale(0.9);
+    }
+
+    14%,
+    26%,
+    38%,
+    50%,
+    62%,
+    74%,
+    86% {
+        transform: translateX(2px) scale(0.9);
+    }
+
+    20%,
+    32%,
+    44%,
+    56%,
+    68%,
+    80% {
+        transform: translateX(-2px) scale(0.9);
+    }
+}

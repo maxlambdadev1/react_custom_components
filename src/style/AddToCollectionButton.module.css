@@ -1,0 +1,103 @@
+.collection {
+    --border-color : #212533;
+}
+.collection.keyC {
+    --border-color : #e00ed2;
+}
+.collection.key54 {
+    --border-color : #2806ec;
+    border-radius : 3px;
+    background-color : #b95eef;
+    box-shadow: 3px 5px 5px #240d2a;
+}
+
+.collection input {
+    display: none;
+}
+
+.collection input+div {
+    position: relative;
+    width: 24px;
+    height: 36px;
+    border-radius: 3px;
+    border: 2px solid var(--border-color);
+    margin: 0 0 0 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.collection input+div:before,
+.collection input+div:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--border-color);
+    right: 100%;
+    transition: all 0.4s ease, background 0.2s ease;
+}
+
+.collection input+div:before {
+    transform: translate(-4px, 0);
+    top: 4px;
+    bottom: 4px;
+}
+
+.collection input+div:after {
+    transform: translate(-8px, 0);
+    top: 8px;
+    bottom: 8px;
+}
+
+.collection input+div span {
+    display: block;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transition: transform 0.4s ease;
+}
+
+.collection input+div span:before,
+.collection input+div span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    background: var(--border-color);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease;
+}
+
+.collection input+div span:before {
+    width: 10px;
+    height: 2px;
+}
+
+.collection input+div span:after {
+    height: 10px;
+    width: 2px;
+}
+
+.collection input:checked+div {
+    height: 24px;
+    margin: 6px 4px;
+    background: var(--border-color);
+}
+
+.collection input:checked+div:before,
+.collection input:checked+div:after {
+    transform: translate(2px, 0);
+    opacity: 0;
+}
+
+.collection input:checked+div span {
+    transform: rotate(-225deg);
+}
+
+.collection input:checked+div span:before,
+.collection input:checked+div span:after {
+    background: #fff;
+}
