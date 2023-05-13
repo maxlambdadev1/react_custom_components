@@ -1,11 +1,12 @@
 body {
     --body-night : #171C28;
     transition: background 0.4s ease;
-    background: var(--body-night);
+    --body-day : #fff;
+    background: var(--body-day);
 }
 
-body.day {
-    background: var(--body-day);
+body.night {
+    background: var(--body-night);
 }
 
 .dayNight {

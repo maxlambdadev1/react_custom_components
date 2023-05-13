@@ -4,12 +4,9 @@ import classNames from "classnames";
 
 const DayNightSwitch = () => {
     const [ isDay, setIsDay] = useState(true);
-    useEffect(() => {
-        document.body.classList.add(styles['day']);
-    }, [])
     const handleClick = () => {
         console.log('isDay', isDay)
-        document.body.classList.toggle(styles['day']);
+        document.body.classList.toggle(styles['night']);
         setIsDay(!isDay);
     }
 

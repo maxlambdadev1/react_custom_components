@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import classNames from 'classnames';
 
 const ComponentContainer = ( props ) => {
     return (
-        <div className='rounded-lg border-2 border-sky-400 overflow-hidden'>
+        <div className={classNames('rounded-lg border-2 border-sky-400 overflow-hidden', props.className)}>
             <div className='text-center font-bold py-3'>
                 { props.title }
             </div>

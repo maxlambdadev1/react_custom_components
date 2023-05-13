@@ -1,0 +1,161 @@
+.tileWrapper {
+    height: 125px;
+    width: 125px;
+    --border-color : #0051ff;
+    --background-color : #0051ff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.tileWrapper.keyC {
+    --border-color : #edb7f1;
+    --background-color : #e428f1;
+}
+.tileWrapper.key54 {
+    --border-color : #6a99eb;
+    --background-color : #e34d12;
+}
+
+.tileWrapper, .tileWrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.tileWrapper label {
+    z-index: 10;
+    transition: all 0.15s ease-in-out;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4e4f4f;
+    cursor: pointer;
+}
+
+.tileWrapper label .icon {
+    font-size: 50px;
+    margin: 15px 0px 10px 0px;
+}
+
+.tileWrapper.type1 .indicator {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 25px;
+    --ionicon-stroke-width: 35px;
+    cursor: pointer;
+}
+
+.type1 .indicator .checked {
+    position: absolute;
+    color: var(--background-color);
+    opacity: 0;
+    z-index: 15;
+    transition: all 0.15s ease-in-out;
+}
+
+.type1 .indicator .empty {
+    position: absolute;
+    color: grey;
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+    z-index: 10;
+}
+
+.type2 input[type="checkbox"] {
+    border: solid 2px lightgrey;
+}
+
+.tileWrapper input[type="checkbox"] {
+    appearance: none;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 15px 15px 25px rgba(2, 28, 53, 0.05);
+    cursor: pointer;
+    transition: all 0.05s ease-in-out;
+}
+
+.tileWrapper input[type="checkbox"]:hover {
+    border: solid 2px var(--border-color);
+}
+
+.tileWrapper input[type="checkbox"]:checked {
+    border: solid 2px var(--border-color);
+}
+
+.type1 input[type="checkbox"]:hover+.indicator .empty {
+    opacity: 1;
+}
+
+.type1 input[type="checkbox"]:checked+.indicator .checked {
+    opacity: 1;
+}
+
+.type2 .indicator {
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    width: 20px;
+    height: 10px;
+    border-radius: 5px 0px 0px 0px;
+    background-color: lightgrey;
+    transition: height 0.4s cubic-bezier(.48, .05, .36, 1.74);
+}
+
+.type2 .indicator:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left : 0;
+    border-bottom: 5px transparent solid;
+    border-left: 10px lightgrey solid;
+    border-right: 10px lightgrey solid;
+}
+
+.type2 .indicator .edge {
+    height: 5px;
+    width: 5px;
+    background-color: lightgrey;
+    position: absolute;
+    right: -2.5px;
+}
+
+.type2 .indicator .edge:before {
+    content: '';
+    height: 5px;
+    width: 7px;
+    background-color: #aba9a9;
+    position: absolute;
+    right: -5px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.tileWrapper.type2 input[type="checkbox"]:checked+label .indicator {
+    height: 25px;
+}
+
+.tileWrapper.type2 input[type="checkbox"]:checked+label .indicator,
+.tileWrapper.type2 input[type="checkbox"]:checked+label .indicator .edge {
+    background-color: var(--background-color);
+}
+
+.tileWrapper.type2 input[type="checkbox"]:checked+label .indicator .edge:before {
+    background-color: #012f91;
+}
+
+.tileWrapper.type2 input[type="checkbox"]:checked+label .indicator:after {
+    border-left: 10px var(--background-color) solid;
+    border-right: 10px var(--background-color) solid;
+}
+#CheckboxSelectionDesign {
+    opacity : 1;
+}
