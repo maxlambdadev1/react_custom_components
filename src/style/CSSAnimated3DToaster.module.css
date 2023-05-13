@@ -18,6 +18,40 @@
   --shade-three: #a6a6a6;
   --shine: rgba(255,255,255,0.5);
 }
+.container.keyC {
+  --toaster-width: 18;
+  --toaster-height: 10;
+  --toaster-depth: 12;
+  --toast-depth: 1;
+  --eye-size: 7.5px;
+  --feature: #3f4540;
+  --shadow: #616e63;
+  --cloth-color-one: rgba(57, 227, 54, 0.65);
+  --speed: 1;
+  --transition: 0.25;
+  --handle: #616961;
+  --shade-one: #d89cdd;
+  --shade-two: #c764e8;
+  --shade-three: #d881e5;
+  --shine: rgba(230, 59, 193, 0.5);
+}
+.container.key54 {
+  --toaster-width: 18;
+  --toaster-height: 10;
+  --toaster-depth: 12;
+  --toast-depth: 1;
+  --eye-size: 7.5px;
+  --feature: #473c4a;
+  --shadow: #474e44;
+  --cloth-color-one: rgba(238, 136, 58, 0.65);
+  --speed: 1;
+  --transition: 0.25;
+  --handle: #1a3ad8;
+  --shade-one: #9cb0dd;
+  --shade-two: #5d85db;
+  --shade-three: #818ee5;
+  --shine: rgba(59, 130, 230, 0.5);
+}
 .container [type='checkbox'] {
   position: absolute;
   left: 100%;
