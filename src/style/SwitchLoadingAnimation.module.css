@@ -1,0 +1,139 @@
+.switch {
+    margin: 0;
+    cursor: pointer;
+    --switch-size : 20px;
+    --switch-border : #D1D7E3;
+    --switch-dot : #fff;
+    --switch-active : #9EC4FF;
+    --switch-border-active : #5D9BFB;
+    font-family: Roboto, Arial;
+    color: #ADAFB6;
+}
+.switch.keyC {
+    --switch-size : 25px;
+    --switch-border : #D1D7E3;
+    --switch-dot : #fff;
+    --switch-active : #bb12e6;
+    --switch-border-active : #f011b1;
+}
+.switch.key54 {
+    --switch-size : 23px;
+    --switch-border : #a3e1aa;
+    --switch-dot : #7d15ec;
+    --switch-active : #ec7a4d;
+    --switch-border-active : #e38163;
+}
+
+.switch>span {
+    line-height: var(--switch-size);
+    margin: 0 0 0 4px;
+    vertical-align: top;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch input+div {
+    width: calc(2 * var(--switch-size));
+    height: var(--switch-size);
+    border: 1px solid var(--switch-border);
+    background: var(--switch-border);
+    border-radius: calc(var(--switch-size) / 2);
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.4s ease;
+}
+
+.switch input+div:before {
+    content: "";
+    float: left;
+    width: calc(var(--switch-size) - 6px);
+    height: calc(var(--switch-size) - 6px);
+    background: var(--switch-dot);
+    pointer-events: none;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: inherit;
+    transition: all 0.4s ease 0s;
+}
+
+.switch input+div:after {
+    content: "";
+    left: -1px;
+    top: -1px;
+    width: var(--switch-size);
+    height: var(--switch-size);
+    border: 3px solid transparent;
+    border-top-color: var(--switch-border-active);
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+}
+
+.switch input:checked+div {
+    background: var(--switch-active);
+    border: 1px solid var(--switch-border-active);
+}
+
+.switch input:checked+div:before {
+    transform: translate(var(--switch-size), 0);
+}
+
+.switch.load input+div {
+    width: var(--switch-size);
+    margin: 0 10px;
+}
+
+.switch.load input+div:after {
+    opacity: 1;
+    -webkit-animation: rotate 0.9s infinite linear;
+    animation: rotate 0.9s infinite linear;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.switch:hover input:disabled+div {
+    border-color: var(--switch-border);
+}
+
+.switch:hover input:checked+div {
+    background: var(--switch-border-active);
+}
+
+@-webkit-keyframes rotate {
+
+    0%,
+    15% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(290deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+
+    0%,
+    15% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(290deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

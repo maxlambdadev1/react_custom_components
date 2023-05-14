@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
-import styles from "../style/SimpleCSSSwitchToggle.module.css";
+import styles from "../style/SwitchLoadingAnimation.module.css";
 import classNames from "classnames";
 
-const SimpleCSSSwitchToggle = () => {
+const SwitchLoadingAnimation = () => {
     const [isChecked, setIsChecked] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
     const toggleCheck = () => {
-        console.log('checked', isChecked)
-        setIsChecked(!isChecked);
+        if (!!isChecked) {
+            setIsChecked(false);
+        } else {
+            setIsLoading(true);
+            setTimeout(() => {
+                setIsLoading(false);
+                setIsChecked(true);
+            }, 2000)
+        }
     }
 
     const [key, setKey] = useState("");
@@ -33,13 +42,12 @@ const SimpleCSSSwitchToggle = () => {
     }, [keyArr]);
 
     return (
-        <label className={classNames(styles["switch"], styles[keyStatus])}>
-            <input type="checkbox" checked={isChecked ? true : false} onChange = {toggleCheck} />
-            <div>
-                <span></span>
-            </div>
+        <label className={classNames(styles["switch"], styles[keyStatus], isLoading ? styles['load'] : '')}>
+            <input type="checkbox" checked={isChecked ? true : false} onChange={toggleCheck} />
+            <div></div>
+            <span>Switch me</span>
         </label>
     )
 }
 
-export default SimpleCSSSwitchToggle;
+export default SwitchLoadingAnimation;

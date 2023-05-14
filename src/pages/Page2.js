@@ -19,6 +19,10 @@ import IOS15Button from "../components/IOS15Button";
 import CSSEggSwitch from "../components/CSSEggSwitch";
 import Check from "../components/Check";
 import PlusMinusToggle from "../components/PlusMinusToggle";
+import ContinueApplicationHover from "../components/ContinueApplicationHover";
+import MailNotification from "../components/MailNotification";
+import HeartFoldButton from "../components/HeartFoldButton";
+import HeartFoldButton1 from "../components/HeartFoldButton1";
 
 const Page2 = () => {
   return (
@@ -86,6 +90,18 @@ const Page2 = () => {
           <div className="p-3"><InputGroupFocusWithin title="https://" placeholder='domain.tld' direction={true} /></div>
           <div className="p-3"><InputGroupFocusWithin title='@gmail.com' direction={false} /></div>
         </div>
+      </ComponentContainer>
+      <ComponentContainer title='ContinueApplicationHover' bgColor='#F6F8FF'>
+        <ContinueApplicationHover />
+      </ComponentContainer>
+      <ComponentContainer title='MailNotification' bgColor=''>
+        <MailNotification />
+      </ComponentContainer>
+      <ComponentContainer title='HeartFoldButton' bgColor=''>
+        <HeartFoldButton />
+      </ComponentContainer>
+      <ComponentContainer title='HeartFoldButton1' bgColor=''>
+        <HeartFoldButton1 />
       </ComponentContainer>
     </div>
   )

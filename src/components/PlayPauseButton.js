@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import styles from "../style/SimpleCSSSwitchToggle.module.css";
+import styles from "../style/PlayPauseButton.module.css";
 import classNames from "classnames";
 
-const SimpleCSSSwitchToggle = () => {
-    const [isChecked, setIsChecked] = useState(false);
-    const toggleCheck = () => {
-        console.log('checked', isChecked)
-        setIsChecked(!isChecked);
+const PlayPauseButton = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    let title = 'Delete';
+
+    const onPlayPause = () => {
+        setIsPlaying(!isPlaying);
     }
+
 
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
@@ -33,13 +35,16 @@ const SimpleCSSSwitchToggle = () => {
     }, [keyArr]);
 
     return (
-        <label className={classNames(styles["switch"], styles[keyStatus])}>
-            <input type="checkbox" checked={isChecked ? true : false} onChange = {toggleCheck} />
-            <div>
-                <span></span>
-            </div>
-        </label>
+        <button className={classNames(styles["play-pause-button"], styles[keyStatus], styles['paused'], isPlaying ? styles['playing'] : '')}
+            onClick={onPlayPause}
+        >
+            <i>P</i>
+            <i>l</i>
+            <i>a</i>
+            <i>y</i>
+            <i>use</i>
+        </button>
     )
 }
 
-export default SimpleCSSSwitchToggle;
+export default PlayPauseButton;
