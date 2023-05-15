@@ -1,0 +1,144 @@
+.upload {
+    cursor: pointer;
+    position: relative;
+    --active : #67C38A;
+    --circle : #EDEEF1;
+    --icon : #B4B8C1;
+}
+.upload.keyC {
+    --active : #9178e5;
+    --circle : #EDEEF1;
+    --icon : #8da3ce;
+}
+.upload.key54 {
+    --active : #d461dc;
+    --circle : #EDEEF1;
+    --icon : #c3b0cf;
+}
+
+.upload .image {
+    color: var(--icon);
+    stroke: none;
+    transform: rotate(15deg);
+}
+
+.upload .circle {
+    display: block;
+    stroke: var(--circle);
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+    width: 164px;
+    height: 164px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    transform: rotate(-90deg);
+}
+
+.upload .circle .active {
+    stroke: var(--active);
+    stroke-dasharray: 502.65;
+    stroke-dashoffset: 502.65;
+    transition: all 4s ease;
+}
+
+.upload:before {
+    content: "";
+    border-radius: 12px;
+    background: rgba(180, 184, 193, 0.3);
+    transform: rotate(-15deg);
+}
+
+.upload .image,
+.upload:before {
+    display: block;
+    width: 52px;
+    height: 52px;
+    margin: -26px 0 0 -26px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform-origin: 0% 100%;
+    transition: all 0.5s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.upload:not(.do):hover .image {
+    transform: rotate(10deg);
+    color: var(--active);
+}
+
+.upload:not(.do):hover:before {
+    transform: rotate(-10deg);
+    background: rgba(103, 195, 138, 0.3);
+}
+
+.upload.do .image {
+    color: var(--active);
+    transform: rotate(10deg);
+    -webkit-animation: bounce 1s infinite ease;
+    animation: bounce 1s infinite ease;
+}
+
+.upload.do:before {
+    background: rgba(103, 195, 138, 0.3);
+    transform: rotate(-10deg);
+    -webkit-animation: bounceAlt 1s infinite ease;
+    animation: bounceAlt 1s infinite ease;
+}
+
+.upload.do .circle {
+    opacity: 1;
+}
+
+.upload.do .circle .active {
+    stroke-dashoffset: 0;
+}
+
+.upload.animateEnd .image,
+.upload.animateEnd:before {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.upload.animateEnd .image {
+    transform: rotate(10deg);
+}
+
+.upload.animateEnd:before {
+    transform: rotate(-10deg);
+}
+
+.upload.animateEnd .circle {
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.upload.animateEnd .circle .active {
+    stroke-dasharray: 502.65;
+    stroke-dashoffset: 502.65;
+}
+
+@-webkit-keyframes bounce {
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes bounce {
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+@-webkit-keyframes bounceAlt {
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes bounceAlt {
+    50% {
+        transform: rotate(-15deg);
+    }
+}

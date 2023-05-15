@@ -186,7 +186,7 @@
 .table div:nth-of-type(5) {
   filter: brightness(0.95);
 }
-img {
+.container img {
   position: absolute;
   height: 20%;
   right: 2.5px;

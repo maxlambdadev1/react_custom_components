@@ -1,0 +1,76 @@
+.card {
+    width: 15rem;
+    height: 10rem;
+    background: #091821;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after {
+    transition: all 0.3s ease-in;
+    content: "";
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    bottom: -100%;
+    right: -50%;
+    transform: scale(0);
+    background: #ff9e0c;
+    border-radius: 50%;
+}
+
+.card.fondo:after {
+    transform: scale(3);
+}
+
+.card .btn-floating {
+    background: #ff9e0c;
+    transform: scale(0.7);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.card.keyC .btn-floating {
+    background: #ff5252;
+}
+.card.keyC:after {
+    background: #ff5252;
+}
+
+.card.key54 .btn-floating {
+    background: #35b735;
+}
+.card.key54:after {
+    background: #35b735;
+}
+
+.rotar {
+    transform: scale(0.7) rotate(-45deg) !important;
+}
+
+.btn-floating {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    background-color: #26a69a;
+    border-radius: 50%;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.btn-floating i {
+    width: inherit;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 40px;
+}

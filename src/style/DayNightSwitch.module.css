@@ -15,15 +15,15 @@ body.night {
     --body-night-btn : #fff;
     --body-day-btn : #5628EE;
 }
-.dayNight.keyA {
+.dayNight.keyC {
     --body-day : #fff;
     --body-night-btn : #f76024;
     --body-day-btn : #e8ce0d;
 }
-.dayNight.keyB {
+.dayNight.key54 {
     --body-day : #fff;
-    --body-night-btn : #e4ba11;
-    --body-day-btn : #ae0de8;
+    --body-night-btn : #d1d134;
+    --body-day-btn : #f3d116;
 }
 
 .dayNight input {

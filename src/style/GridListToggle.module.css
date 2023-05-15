@@ -19,10 +19,10 @@
     transition: transform 0.15s, background 0.4s;
 }
 .grid-list.keyC {
-    --color: #275efe;
-    --background: #00aa00;
-    --background-hover: #00cc00;
-    --icon-color: #275efe;
+    --color: #e1efe7;
+    --background: #dd5bec;
+    --background-hover: #dc3bd2;
+    --icon-color: #eef7ee;
     --border-radius : 20px;
 }
 .grid-list.key54 {

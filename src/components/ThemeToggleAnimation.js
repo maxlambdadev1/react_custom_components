@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import styles from "../style/AddToCollectionButton.module.css";
+import styles from "../style/ThemeToggleAnimation.module.css";
 import classNames from "classnames";
+import IonIcon from '@reacticons/ionicons';
 
-const AddToCollectionButton = () => {
-    const [isChecked, setIsChecked] = useState(false);
-    const toggleCheck = () => {
-        console.log('checked', isChecked)
-        setIsChecked(!isChecked);
+const ThemeToggleAnimation = () => {
+    const [isDay, setIsDay] = useState(true);
+    const handleClick = () => {
+        console.log('isDay', isDay)
+        document.body.classList.toggle('dark');
+        setIsDay(!isDay);
     }
 
     const [key, setKey] = useState("");
@@ -33,15 +35,13 @@ const AddToCollectionButton = () => {
     }, [keyArr]);
 
     return (
-        <label className={classNames(styles["collection"], styles[keyStatus])} >
-            <input type="checkbox"
-                checked={isChecked ? true : false} onChange={toggleCheck}
-            />
-            <div>
-                <span></span>
-            </div>
-        </label>
+        <div className={classNames(styles["toggle-wrapper"], styles[keyStatus])}
+            onClick={handleClick}
+        >
+            <IonIcon name="sunny-outline"  className={styles["sun"]} />
+            <IonIcon name="moon-outline" className={styles["moon"]} />
+        </div>
     )
 }
 
-export default AddToCollectionButton;
+export default ThemeToggleAnimation;

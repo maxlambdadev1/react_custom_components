@@ -17,7 +17,7 @@ const PlusMinusToggle = () => {
         window.addEventListener("keydown", (evt) => {
             setKey(evt.key);
         });
-    })
+    }, [])
     useEffect(() => {
         let arr = keyArr;
         arr.unshift(key);

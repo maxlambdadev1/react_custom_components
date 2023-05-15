@@ -22,7 +22,7 @@ const TrashButton = () => {
         window.addEventListener("keydown", (evt) => {
             setKey(evt.key);
         });
-    })
+    }, [])
     useEffect(() => {
         let arr = keyArr;
         arr.unshift(key);
@@ -51,7 +51,7 @@ const TrashButton = () => {
                     </svg>
                 </div>
                 <div className={styles["text"]}>
-                    { title.trim().split('').map(i => (<span>{i}</span>)) }
+                    { title.trim().split('').map( (i, index) => (<span key={index}>{i}</span>)) }
                 </div>
             </button>
             <svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }} >

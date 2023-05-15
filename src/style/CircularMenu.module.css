@@ -1,0 +1,137 @@
+.container {
+    background: #0E2431;
+    min-height : 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left : -20px;
+}
+.container.keyC .content {
+    background: #4b3552;
+}
+.container.keyC  .cont .btn {
+    position: absolute;
+    font-size: 3rem;
+    color: #e26cd6;
+}
+.container.key54 .content {
+    background: #1c4b1c;
+}
+.container.key54  .cont .btn {
+    position: absolute;
+    font-size: 3rem;
+    color: #11f30a;
+}
+
+
+.cont {
+    position: relative;
+}
+
+.cont .btn {
+    position: absolute;
+    font-size: 3rem;
+    color: #e2e200;
+    bottom: 0rem;
+    left: calc(50% - .5rem);
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    z-index : 11;
+}
+
+.cont .btn.click {
+    transform: rotate(45deg);
+    color: #c9c900;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    width: 15rem;
+    height: 15rem;
+    background: #091821;
+    border-radius: 50%;
+    position: absolute;
+    bottom: calc(50% - 5.9rem);
+    z-index: 10;
+    left: calc(50% - 6.5rem);
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+    transition: all 0.3s ease-in;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.content.expand {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.content li {
+    list-style: none;
+    color: white;
+    position: absolute;
+    width: 1rem;
+    bottom: calc(50% - 1rem);
+    right: 1rem;
+    transform-origin: -5.5rem center;
+}
+
+.container li:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.container li:nth-child(2) i {
+    transform: rotate(45deg);
+}
+
+.container li:nth-child(3) {
+    transform: rotate(-90deg);
+}
+
+.container li:nth-child(3) i {
+    transform: rotate(90deg);
+}
+
+.container li:nth-child(4) {
+    transform: rotate(-135deg);
+}
+
+.container li:nth-child(4) i {
+    transform: rotate(135deg);
+}
+
+.container li:nth-child(5) {
+    transform: rotate(-180deg);
+}
+
+.container li:nth-child(5) i {
+    transform: rotate(180deg);
+}
+
+.container li:nth-child(6) {
+    transform: rotate(-225deg);
+}
+
+.container li:nth-child(6) i {
+    transform: rotate(225deg);
+}
+
+.container li:nth-child(7) {
+    transform: rotate(-270deg);
+}
+
+.container li:nth-child(7) i {
+    transform: rotate(270deg);
+}
+
+.container li:nth-child(8) {
+    transform: rotate(-315deg);
+}
+
+.container li:nth-child(8) i {
+    transform: rotate(315deg);
+}

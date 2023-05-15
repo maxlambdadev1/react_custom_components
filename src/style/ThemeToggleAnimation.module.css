@@ -1,0 +1,87 @@
+body {
+    transition: all 0.2s ease-in-out;
+}
+
+:global(.dark) {
+    background-color: #29303C;
+}
+
+.toggle-wrapper > span {
+    --ionicon-stroke-width: 40px;
+    font-size: 28px;
+    transition: transform 0.6s cubic-bezier(.66, -0.64, .33, 1.5), opacity 0.4s linear, color 0.4s linear;
+}
+
+.toggle-wrapper {
+    width: 110px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) -2px 15px 25px -5px;
+    position: relative;
+    --light-color : #FFBB52;
+    --dark-color : #485365;
+    border: solid 3px #E4E7EC;
+}
+.toggle-wrapper.keyC {
+    --light-color : #df409f;
+    --dark-color : #ed9911;
+    border: solid 3px #e0d2b9;
+}
+.toggle-wrapper.key54 {
+    --light-color : #f08d0b;
+    --dark-color : #d6c82f;
+    border: solid 3px #dcbb9c;
+}
+
+.toggle-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: solid 4px var(--light-color);
+    border-radius: 50%;
+    background-color: #FFECCF;
+    z-index: 10;
+    right: 15px;
+    box-sizing: content-box;
+    transition: right 0.6s cubic-bezier(.84, -0.89, .05, 1.97), backgroundColor 0.2s linear, border 0.2s linear;
+}
+
+:global(.dark) .toggle-wrapper:before {
+    right: 58px;
+    background-color: var(--dark-color);
+    border: solid 4px white;
+}
+
+:global(.dark) .toggle-wrapper {
+    border: solid 3px var(--dark-color);
+    background-color: #374151;
+}
+
+.sun {
+    color: var(--light-color);
+    opacity: 1;
+    transform: rotate(90deg) translateX(0px);
+}
+
+:global(.dark) .sun {
+    opacity: 0;
+    transform: rotate(0deg) translateX(5px)
+}
+
+.moon {
+    opacity: 0;
+    transform: rotate(45deg);
+}
+
+:global(.dark) .moon {
+    opacity: 1;
+    color: white;
+    transform: rotate(0deg);
+}

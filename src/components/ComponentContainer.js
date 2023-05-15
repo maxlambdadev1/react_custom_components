@@ -8,7 +8,7 @@ const ComponentContainer = ( props ) => {
                 { props.title }
             </div>
             <div className="flex justify-evenly items-center p-3" 
-                style={{backgroundColor : props.bgColor ? props.bgColor : '' , minHeight : '150px' }}
+                style={{backgroundColor : props.bgColor ? props.bgColor : '' , minHeight : '150px', height : 'calc(100% - 48px)' }}
             >
                 { props.children }
             </div>

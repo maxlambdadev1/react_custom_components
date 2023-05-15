@@ -1,0 +1,159 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    margin: 10px 0px;
+    --bg-color : #FEFEFE;
+    --icon-bg-color : #202327;
+    --icon-color : #fff;
+    --icon-hover-bg-color : #FCD50C;
+}
+.wrapper.keyC {
+    --bg-color : #c8e0f5;
+    --icon-bg-color : #78268c;
+    --icon-color : #fff;
+    --icon-hover-bg-color : #30f461;
+}
+.wrapper.key54 {
+    --bg-color : #8ce7b2;
+    --icon-bg-color : #3780e5;
+    --icon-color : #fff;
+    --icon-hover-bg-color : #caedcf;
+}
+
+.wrapper * {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+.usercard {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#pb1,
+#pb2 {
+    width: 50px;
+    border-radius: 5px;
+    height: 50px;
+    overflow: hidden;
+    margin-right: 10px;
+    background: url("https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?t=st=1646045360~exp=1646045960~hmac=c1e545a531150c02bb76911ca74918b4f80f1a1d72b4bd477ba8f9ebb224316f&w=740");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.info .name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.info .job {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.options {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 50px;
+    height: 75px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.options .edit,
+.options .favourite,
+.options .delete {
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--icon-bg-color);
+    border: solid var(--icon-bg-color) 3px;
+    left: 50%;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.options .edit span,
+.options .favourite span,
+.options .delete span {
+    color: var(--icon-color);
+    --ionicon-stroke-width: 50px;
+    opacity: 0;
+    font-size: 1.3rem;
+}
+
+.options .edit:hover,
+.options .favourite:hover,
+.options .delete:hover {
+    background-color: var(--icon-bg-color);
+}
+
+.options .edit {
+    top: 30%;
+}
+
+.options .favourite {
+    top: 50%;
+}
+
+.options .delete {
+    top: 70%;
+}
+
+.options.open {
+    width: 200px;
+}
+
+.options.open .edit,
+.options.open .favourite,
+.options.open .delete {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+}
+
+.options.open .edit span,
+.options.open .favourite span,
+.options.open .delete span {
+    opacity: 1;
+}
+
+.options.open .edit:hover,
+.options.open .favourite:hover,
+.options.open .delete:hover {
+    background-color: var(--icon-hover-bg-color);
+}
+
+.options.open .edit:hover span,
+.options.open .favourite:hover span,
+.options.open .delete:hover span {
+    color: var(--icon-bg-color);
+}
+
+.options.open .edit {
+    left: 20%;
+}
+
+.options.open .favourite {
+    left: 50%;
+}
+
+.options.open .delete {
+    left: 80%;
+}

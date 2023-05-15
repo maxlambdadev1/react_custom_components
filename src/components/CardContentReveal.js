@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import styles from "../style/AddToCollectionButton.module.css";
+import styles from "../style/CardContentReveal.module.css";
 import classNames from "classnames";
+import 'material-icons/iconfont/material-icons.css';
 
-const AddToCollectionButton = () => {
-    const [isChecked, setIsChecked] = useState(false);
-    const toggleCheck = () => {
-        console.log('checked', isChecked)
-        setIsChecked(!isChecked);
+const CardContentReveal = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    const onclick = () => {
+        setIsActive(!isActive);
     }
+
 
     const [key, setKey] = useState("");
     const [keyArr, setKeyArr] = useState(["", "", ""]);
@@ -33,15 +35,14 @@ const AddToCollectionButton = () => {
     }, [keyArr]);
 
     return (
-        <label className={classNames(styles["collection"], styles[keyStatus])} >
-            <input type="checkbox"
-                checked={isChecked ? true : false} onChange={toggleCheck}
-            />
-            <div>
-                <span></span>
+        <div className={classNames(styles["card"], styles[keyStatus], isActive? styles['fondo'] : '')} >
+            <div className={classNames(styles["btn-floating"], styles["z-depth-0"], isActive ? styles['rotar'] : '')}
+                onClick={onclick}
+            >
+                <i className="material-icons">add</i>
             </div>
-        </label>
+        </div>
     )
 }
 
-export default AddToCollectionButton;
+export default CardContentReveal;
