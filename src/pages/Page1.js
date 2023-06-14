@@ -22,7 +22,7 @@ import CircularMenu from "../components/CircularMenu";
 
 const Page1 = () => {
   return (
-    <div className='max-w-screen-xl mx-auto grid grid-cols-4 gap-3 p-4'>
+    <div className='max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 p-4'>
       <ComponentContainer title='UploadAnimation' bgColor=''>
         <UploadAnimation />
       </ComponentContainer>
@@ -46,10 +46,6 @@ const Page1 = () => {
       </ComponentContainer>
       <ComponentContainer title='CircularMenu' className='h-72' bgColor='#0E2431'>
         <CircularMenu />
-      </ComponentContainer>
-      <ComponentContainer title='' bgColor=''>
-      </ComponentContainer>
-      <ComponentContainer title='' bgColor=''>
       </ComponentContainer>
       <ComponentContainer title='StarsRatingAnimation' bgColor='#1C212E' className='col-span-2'>
         <StarsRatingAnimation />

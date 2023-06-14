@@ -26,7 +26,7 @@ import HeartFoldButton1 from "../components/HeartFoldButton1";
 
 const Page2 = () => {
   return (
-    <div className='max-w-screen-xl mx-auto grid grid-cols-4 gap-3 p-4'>
+    <div className='max-w-screen-xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 p-4'>
       <ComponentContainer title='PlusMinusToggle' bgColor=''>
         <PlusMinusToggle />
       </ComponentContainer>

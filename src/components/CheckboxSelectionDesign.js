@@ -18,7 +18,6 @@ const CheckboxSelectionDesign = (props) => {
 
     useEffect(() => {
         let class1 = styles['CheckboxSelectionDesign'] + Math.random();
-        console.log('dddd', class1)
         setClass1(class1);
     }, [])
 

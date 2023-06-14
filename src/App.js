@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Page1 from "./pages/Page1.js";
 import Page2 from "./pages/Page2.js";
+import Page3 from "./pages/Page3.js";
 
 function App() {
   return (
@@ -20,13 +21,25 @@ function App() {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <Link to="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">
+                  <Link to="/" 
+                    className="block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent text-gray-900 md:p-0 dark:text-white md:dark:text-blue-500" 
+                    aria-current="page"
+                  >
                     Page1
                   </Link>
                 </li>
                 <li>
-                  <Link to="/page2" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" >
+                  <Link to="/page2" 
+                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" 
+                  >
                     Page2
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/page3" 
+                    className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" 
+                  >
+                    Page3
                   </Link>
                 </li>
               </ul>
@@ -36,6 +49,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Page1 />} />
           <Route exact path='/page2' element={<Page2 />} />
+          <Route exact path='/page3' element={<Page3 />} />
         </Routes>
       </div>
     </Router>
